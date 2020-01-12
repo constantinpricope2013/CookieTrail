@@ -5,19 +5,14 @@
  */
 package cookietrail;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Pricope Costantin
  */
-public class CookieTrail {
-    
-    final static int LEVEL = 1;
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        MainFrame frame = new MainFrame();
-    }
+public class GamePanel extends JPanel{
+    final int LEVEL = CookieTrail.LEVEL; 
+    Private_Rectangle[][] all_rectangles = new Private_Rectangle[LEVEL + 1][LEVEL + 1];
     
 }

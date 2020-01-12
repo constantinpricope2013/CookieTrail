@@ -21,39 +21,27 @@ import javax.swing.JPanel;
 public class MainFrame extends JFrame{
     int MAXIM_WIDTH = 400;
     int MAXIM_HEIGHT = 400;
-    JButton exit_button = new JButton("Exit");
-    JPanel main_panel = new JPanel();
+    MainPanel main_panel = new MainPanel();
 
     public MainFrame() throws HeadlessException {
         
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
         setTitle("Cookie Trail");
         this.setUndecorated(true);
-        this.pack();
         this.setLocationRelativeTo(null);
+        setBackground(Color.yellow);
         this.setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        addListenersToButtons();
+        
         
         setResizable(false);
         this.setSize(MAXIM_WIDTH, MAXIM_HEIGHT);
-        main_panel.setBackground(Color.red);
-        main_panel.add(exit_button);
+        
+        this.getContentPane().setLayout(null);
         this.getContentPane().add(main_panel);
+        main_panel.setLocation(100, 100);
         
     }
     
-    
-    void addListenersToButtons()
-    {
-        exit_button.addActionListener(new ActionListener() 
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                System.exit(0);
-            }
-        });
-    }
-     
 }
